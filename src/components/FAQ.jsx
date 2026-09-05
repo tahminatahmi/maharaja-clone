@@ -1,111 +1,97 @@
 import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
+import { Minus, Plus } from 'lucide-react'
 
 const faqs = [
   {
-    question: 'Do I need to book in advance?',
+    question: 'How do I book a table at Maharaja of India?',
     answer:
-      'Booking is recommended, especially for evenings and weekends. Walk-in guests are welcome when tables are available.',
+      'Bookings are taken via SevenRooms – the Book A Table button at the top of every page opens our reservation system. For same-day tables, call Charing Cross on 020 3091 3500 or Soho on 07477 107546.',
   },
   {
-    question: 'Do you offer vegetarian and vegan dishes?',
+    question: 'Do you serve a pre-theatre menu?',
     answer:
-      'Yes. Our menu includes a selection of vegetarian and plant-based dishes, and our team can help you choose suitable options.',
+      'Yes – both restaurants run a three-course pre-theatre menu from £25. It’s available daily and is the most popular choice before a West End curtain at the Coliseum, the Palace, or the Prince Edward Theatre.',
   },
   {
-    question: 'Can you accommodate food allergies?',
+    question: 'Do you cater for vegetarians, vegans, and dietary requirements?',
     answer:
-      'Please tell us about any allergies or dietary requirements when booking. Our team will explain which dishes may be suitable for you.',
+      'Absolutely. We have a full vegetarian menu, a separate vegan menu, and gluten-free options on request. Please flag any allergies when you book and the kitchen will adapt – we keep dairy-free, nut-free, and gluten-free variants of most dishes ready to go.',
   },
   {
-    question: 'Do you offer private dining?',
+    question: 'Where are your two London restaurants?',
     answer:
-      'Yes. Selected spaces can be reserved for celebrations, business dinners and private events. Visit our Private Dining page for more information.',
+      'Maharaja of India Charing Cross sits at 19A Charing Cross Road, London WC2H 0ET, a minute from Leicester Square tube. Soho is at 63 Old Compton Street, London W1D 6HT, three minutes from Tottenham Court Road.',
   },
   {
-    question: 'Is there a dress code?',
+    question: 'How late are you open?',
     answer:
-      'We recommend smart casual dress, but our priority is that guests feel comfortable while enjoying their visit.',
+      'Charing Cross is open every day from noon until midnight. Soho serves until 1am Monday to Thursday, 2am on Friday and Saturday, and midnight on Sunday – one of the latest proper Indian kitchens in central London.',
+  },
+  {
+    question: 'Do you offer Click & Collect or delivery?',
+    answer:
+      'Click & Collect is available at Charing Cross via maharajacharingcross.co.uk – order ahead, collect when you arrive. For private dining and events, please use the enquiry form on the Private Dining page.',
   },
 ]
 
-function FAQ() {
+export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0)
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
-
   return (
-    <section className="bg-[#f4efe7] py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-          <div className="max-w-xl">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-[#9b6f3f]">
-              Before you visit
-            </p>
+    <section
+      aria-labelledby="faq-heading"
+      className="bg-[#f5f0e8] px-6 pt-20 pb-20 lg:pt-[96px] lg:pb-[88px]"
+    >
+      <div className="mx-auto max-w-[740px]">
+        <div className="text-center">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.38em] text-[#c9a451]">
+            Frequently Asked
+          </p>
+          <h2
+            id="faq-heading"
+            className="mt-5 font-qasira text-[38px] font-normal leading-none tracking-[-0.02em] text-[#173728] sm:text-[50px]"
+          >
+            Questions, Answered
+          </h2>
+        </div>
 
-            <h2 className="text-4xl font-normal leading-tight text-[#211d19] md:text-5xl lg:text-6xl">
-              Frequently asked
-              <span className="block italic text-[#8b6b4b]">
-                questions.
-              </span>
-            </h2>
+        <div className="mt-12 border-t border-[#dedbd2] sm:mt-14">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index
+            const Icon = isOpen ? Minus : Plus
 
-            <p className="mt-6 max-w-md leading-7 text-[#6d645c]">
-              A few useful details to help make your visit to Aurum as smooth
-              and enjoyable as possible.
-            </p>
-          </div>
-
-          <div className="border-t border-[#d8cec1]">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index
-
-              return (
-                <div
-                  key={faq.question}
-                  className="border-b border-[#d8cec1]"
-                >
+            return (
+              <div key={faq.question} className="border-b border-[#dedbd2]">
+                <h3>
                   <button
+                    id={`faq-question-${index}`}
                     type="button"
-                    onClick={() => toggleFAQ(index)}
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
-                    className="flex w-full items-center justify-between gap-6 py-6 text-left md:py-7"
+                    aria-controls={`faq-answer-${index}`}
+                    className="flex w-full cursor-pointer items-center justify-between gap-5 py-7 text-left text-[#173728] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c9a451] sm:py-[36px]"
                   >
-                    <span className="text-lg font-light text-[#211d19] md:text-xl">
+                    <span className="font-qasira text-[21px] font-normal leading-[1.2] tracking-normal sm:text-[23px]">
                       {faq.question}
                     </span>
-
-                    <ChevronDown
-                      size={20}
-                      className={`shrink-0 text-[#8b6b4b] transition-transform duration-300 ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
-                    />
+                    <Icon aria-hidden="true" size={14} strokeWidth={1.5} className="shrink-0 text-[#c9a451]" />
                   </button>
-
-                  <div
-                    className={`grid transition-all duration-300 ${
-                      isOpen
-                        ? 'grid-rows-[1fr] opacity-100'
-                        : 'grid-rows-[0fr] opacity-0'
-                    }`}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="max-w-2xl pb-7 pr-10 leading-7 text-[#6d645c]">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </div>
+                </h3>
+                <div
+                  id={`faq-answer-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-question-${index}`}
+                  hidden={!isOpen}
+                >
+                  <p className="max-w-[660px] pb-8 text-[17px] leading-[1.7] text-[#30302d] sm:pb-[34px] sm:text-[19px]">
+                    {faq.answer}
+                  </p>
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
   )
 }
-
-export default FAQ

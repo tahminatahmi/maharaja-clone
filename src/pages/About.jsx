@@ -1,214 +1,81 @@
-import { ArrowRight, Flame, Leaf, Heart } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import heroImage from '../assets/maharaja/photography/agatanowetastudio-07784.webp'
+import './About.css'
 
-const values = [
-  {
-    icon: Flame,
-    title: 'Respect for Craft',
-    text: 'We combine classic Indian techniques with a modern approach to presentation, balance and flavour.',
-  },
-  {
-    icon: Leaf,
-    title: 'Seasonal Ingredients',
-    text: 'Our menus are shaped around quality produce, fresh herbs and ingredients chosen for flavour first.',
-  },
-  {
-    icon: Heart,
-    title: 'Warm Hospitality',
-    text: 'We want every visit to feel considered, relaxed and genuinely welcoming from the moment you arrive.',
-  },
+const faqs = [
+  ['How long has Maharaja of India been open?', 'Our flagship Charing Cross restaurant has been serving the West End since 1960, with Soho following in 2014. Both restaurants are independently owned and operated.'],
+  ['What kind of Indian cuisine do you serve?', 'Regional Indian – Punjabi tandoor, Mughal slow-braising, Kashmiri yoghurt curries, and a handful of South Indian dishes. The menu is broad enough to feed a celebration and considered enough to feed a single quiet supper.'],
+  ['Are your chefs from India?', 'Our kitchen brigade has decades of regional Indian experience between them. The recipes were learned by our chefs from their families, and most of the senior team trained in India before joining us in London.'],
+  ['Do you source ingredients from India?', 'Key spices – Kashmiri chillies, cardamom, fenugreek, certain rices – come direct from India through specialist importers. Meat and dairy are British. Vegetables come from London markets.'],
 ]
 
-function About() {
+const tiles = [
+  ['Step Inside', 'Luxurious Interior', 'View Gallery', 'https://maharajaindian.co.uk/gallery/'],
+  ['From The Kitchen', 'Delicious Cuisine', 'See Our Menu', 'https://maharajaindian.co.uk/wp-content/uploads/2025/03/Maharaja-Menu-2025.pdf'],
+  ['Five Stars', 'Happy Customers', 'Read Reviews', 'https://www.tripadvisor.co.uk/Restaurant_Review-d784337'],
+]
+
+export default function About() {
   return (
     <>
       <Navbar />
-
-      <main>
-        {/* HERO */}
-        <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-[#171512] text-white">
-          <img
-            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=85"
-            alt="Elegant restaurant dining room"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-
-          <div className="absolute inset-0 bg-black/55" />
-
-          <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-36 sm:px-6 md:pb-20 lg:px-8 lg:pb-24">
-            <p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-[#d8b37d]">
-              About Aurum
-            </p>
-
-            <h1 className="max-w-4xl text-5xl font-normal leading-[0.92] text-white sm:text-6xl md:text-7xl lg:text-8xl">
-              Rooted in tradition,
-              <span className="block italic text-[#e4d4bd]">
-                made for today.
-              </span>
-            </h1>
+      <main className="about-page" id="main">
+        <section className="about-hero" aria-labelledby="about-title">
+          <img src={heroImage} alt="" className="about-hero-image" fetchPriority="high" />
+          <div className="about-container">
+            <p className="about-label">About</p>
+            <h1 id="about-title">Exquisite Flavours, Timeless Traditions</h1>
+            <span className="about-hero-divider" aria-hidden="true" />
+            <p className="about-hero-description">Over six decades of regional Indian cooking, two London restaurants, one uncompromising kitchen.</p>
           </div>
         </section>
 
-        {/* INTRODUCTION */}
-        <section className="bg-[#f4efe7] py-20 md:py-28">
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-8">
-            <div>
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-[#9b6f3f]">
-                Our story
-              </p>
+        <section className="about-narrative about-container" aria-label="Our story">
+          <div className="about-story">
+            <p>Maharaja of India was founded on a simple idea: that great Indian cooking is the product of time, patience, and respect for ingredients. We work with regional traditions – Punjabi tandoor, Mughal slow-braising, Goan coastal – and we cook them properly.</p>
+            <p>Our spices are ground in-house. Our breads are flat-baked to order. Our lamb is cooked over coals so long it forgets it was ever raw. That's the Maharaja standard, and it's why guests have come back to our Charing Cross dining room for years.</p>
+          </div>
+          <div className="about-ornament" aria-hidden="true"><span>◆</span></div>
+          <blockquote className="about-quote">“The kitchen is the most honest room in the restaurant. Every plate tells you exactly how much we care.”</blockquote>
+        </section>
 
-              <h2 className="text-4xl font-normal leading-tight text-[#211d19] md:text-5xl lg:text-6xl">
-                Indian cooking with
-                <span className="block italic text-[#8b6b4b]">
-                  a contemporary point of view.
-                </span>
-              </h2>
-
-              <p className="mt-7 leading-8 text-[#655d55]">
-                Aurum is a fictional restaurant created for this React learning
-                project. Its concept is inspired by the richness and diversity
-                of Indian cuisine while taking a clean, modern approach to
-                dining.
-              </p>
-
-              <p className="mt-5 leading-8 text-[#655d55]">
-                The idea is simple: carefully prepared food, confident flavours,
-                thoughtful interiors and hospitality that feels personal without
-                becoming formal.
-              </p>
-
-              <p className="mt-5 leading-8 text-[#655d55]">
-                From charcoal cooking and slow-cooked sauces to seasonal
-                vegetables and delicate desserts, each part of the menu is
-                designed to feel familiar while offering something new.
-              </p>
-            </div>
-
-            <div className="overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=85"
-                alt="Chef preparing a restaurant dish"
-                className="h-[520px] w-full object-cover transition-transform duration-700 hover:scale-105 md:h-[620px]"
-              />
-            </div>
+        <section className="about-container" aria-label="Maharaja in numbers">
+          <div className="about-stats">
+            {[['65+', 'Years Serving London'], ['500k+', 'Meals Served'], ['2', 'London Restaurants']].map(([number, label]) => (
+              <div key={label}><span className="about-stat-number">{number}</span><span className="about-stat-label">{label}</span></div>
+            ))}
           </div>
         </section>
 
-        {/* PHILOSOPHY */}
-        <section className="bg-[#211d19] py-20 text-white md:py-28">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-            <div className="mb-14 max-w-3xl md:mb-20">
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-[#c8a46b]">
-                Our philosophy
-              </p>
-
-              <h2 className="text-4xl font-normal leading-tight md:text-5xl lg:text-6xl">
-                Simple principles,
-                <span className="block italic text-[#d9c7ab]">
-                  carefully considered.
-                </span>
-              </h2>
-            </div>
-
-            <div className="grid border-y border-white/10 md:grid-cols-3">
-              {values.map((value, index) => {
-                const Icon = value.icon
-
-                return (
-                  <article
-                    key={value.title}
-                    className={`py-10 md:px-8 md:py-14 lg:px-10 ${
-                      index !== values.length - 1
-                        ? 'border-b border-white/10 md:border-b-0 md:border-r'
-                        : ''
-                    }`}
-                  >
-                    <Icon
-                      size={24}
-                      strokeWidth={1.3}
-                      className="mb-8 text-[#c8a46b]"
-                    />
-
-                    <h3 className="text-2xl font-normal">
-                      {value.title}
-                    </h3>
-
-                    <p className="mt-4 max-w-sm text-sm leading-7 text-white/55">
-                      {value.text}
-                    </p>
-                  </article>
-                )
-              })}
-            </div>
+        <section className="about-container" aria-label="Discover Maharaja">
+          <div className="about-tiles">
+            {tiles.map(([label, title, action, href]) => (
+              <a className="about-tile" href={href} key={title}>
+                <span className="about-tile-label">{label}</span>
+                <h2>{title}</h2>
+                <span className="about-tile-cta">{action} →</span>
+              </a>
+            ))}
           </div>
         </section>
 
-        {/* IMAGE STORY */}
-        <section className="bg-[#f4efe7] py-20 md:py-28">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-            <div className="grid gap-5 md:grid-cols-2">
-              <img
-                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1400&q=85"
-                alt="Indian food being prepared"
-                className="h-[420px] w-full object-cover md:h-[600px]"
-              />
-
-              <img
-                src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1400&q=85"
-                alt="Restaurant chef at work"
-                className="h-[420px] w-full object-cover md:h-[600px]"
-              />
-            </div>
+        <section className="about-faq-section about-container" aria-labelledby="about-faq-title">
+          <div className="about-faq-heading">
+            <p className="about-label">Frequently Asked</p>
+            <h2 id="about-faq-title">Questions, Answered</h2>
           </div>
-        </section>
-
-        {/* FINAL CTA */}
-        <section className="bg-[#171512] py-20 text-center text-white md:py-28">
-          <div className="mx-auto max-w-3xl px-5 sm:px-6">
-            <p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-[#c8a46b]">
-              Experience Aurum
-            </p>
-
-            <h2 className="text-4xl font-normal leading-tight md:text-5xl lg:text-6xl">
-              Come and discover
-              <span className="block italic text-[#d9c7ab]">
-                the story for yourself.
-              </span>
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-xl leading-8 text-white/55">
-              Join us for contemporary Indian cooking, thoughtful hospitality
-              and an evening designed around the table.
-            </p>
-
-            <div className="mt-9 flex flex-wrap justify-center gap-4">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-3 bg-[#f4efe7] px-7 py-4 text-xs font-medium uppercase tracking-[0.16em] text-[#211d19] hover:bg-white"
-              >
-                Book a Table
-                <ArrowRight
-                  size={16}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link>
-
-              <Link
-                to="/menu"
-                className="inline-flex items-center border border-white/25 px-7 py-4 text-xs font-medium uppercase tracking-[0.16em] text-white hover:border-white hover:bg-white hover:text-[#211d19]"
-              >
-                Explore Menu
-              </Link>
-            </div>
+          <div className="about-faq-list">
+            {faqs.map(([question, answer], index) => (
+              <details className="about-faq" key={question} open={index === 0}>
+                <summary>{question}</summary>
+                <p>{answer}</p>
+              </details>
+            ))}
           </div>
         </section>
       </main>
-
       <Footer />
     </>
   )
 }
-
-export default About

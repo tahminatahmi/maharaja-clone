@@ -1,263 +1,95 @@
-import { ArrowRight, Users, UtensilsCrossed, Wine } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { PanelsTopLeft, Star, House } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import heroImage from '../assets/maharaja/photography/agatanowetastudio-07775.webp'
+import './PrivateDining.css'
 
-const experiences = [
-  {
-    icon: Users,
-    title: 'Private Celebrations',
-    text: 'A refined setting for birthdays, anniversaries and special gatherings with family and friends.',
-  },
-  {
-    icon: UtensilsCrossed,
-    title: 'Business Dining',
-    text: 'Private spaces designed for lunches, dinners and professional events that require a little more privacy.',
-  },
-  {
-    icon: Wine,
-    title: 'Bespoke Menus',
-    text: 'Choose from curated group menus or work with our team to shape a dining experience around your occasion.',
-  },
+const features = [
+  { icon: PanelsTopLeft, title: 'Bespoke Menus', text: 'Built around your guests, your occasion, and any dietary needs.' },
+  { icon: Star, title: 'Sommelier-Led Pairings', text: 'Curated wines and aperitifs chosen to match each course on the menu.' },
+  { icon: House, title: 'Private Room', text: 'Discreet, fully bookable, seating from 8 to 24 guests in comfort.' },
 ]
 
-function PrivateDining() {
+export default function PrivateDining() {
+  const [submitMessage, setSubmitMessage] = useState('')
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    setSubmitMessage('Online enquiries are not connected yet. Please call 020 3091 3500 to discuss your event. Your enquiry has not been sent.')
+  }
+
   return (
     <>
       <Navbar />
-
-      <main>
-        {/* HERO */}
-        <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-[#171512] text-white">
-          <img
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85"
-            alt="Private restaurant dining room"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-
-          <div className="absolute inset-0 bg-black/60" />
-
-          <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-36 sm:px-6 md:pb-20 lg:px-8 lg:pb-24">
-            <p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-[#d8b37d]">
-              Private Dining
-            </p>
-
-            <h1 className="max-w-4xl text-5xl font-normal leading-[0.92] sm:text-6xl md:text-7xl lg:text-8xl">
-              Your occasion,
-              <span className="block italic text-[#e4d4bd]">
-                made more memorable.
-              </span>
-            </h1>
-
-            <p className="mt-7 max-w-xl leading-8 text-white/65">
-              From intimate celebrations to business dinners, Aurum offers
-              private dining experiences shaped around your guests.
-            </p>
+      <main id="main" className="private-page">
+        <section className="private-hero" aria-labelledby="private-title">
+          <img src={heroImage} alt="" fetchPriority="high" />
+          <div className="private-container">
+            <p className="private-label">Private Dining</p>
+            <h1 id="private-title">Elegant Private Dining</h1>
+            <span className="private-divider" aria-hidden="true" />
+            <p className="private-hero-description">Bespoke menus, a private room, and a kitchen that builds the evening around you.</p>
           </div>
         </section>
 
-        {/* INTRO */}
-        <section className="bg-[#f4efe7] py-20 md:py-28">
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-8">
-            <div>
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-[#9b6f3f]">
-                Gather around the table
-              </p>
-
-              <h2 className="text-4xl font-normal leading-tight text-[#211d19] md:text-5xl lg:text-6xl">
-                A space designed
-                <span className="block italic text-[#8b6b4b]">
-                  around your event.
-                </span>
-              </h2>
-
-              <p className="mt-7 leading-8 text-[#655d55]">
-                Our private dining spaces offer the atmosphere of Aurum with
-                greater privacy and flexibility for your group.
-              </p>
-
-              <p className="mt-5 leading-8 text-[#655d55]">
-                Whether you are planning a family celebration, client dinner or
-                milestone event, our team can help with menus, seating and the
-                details that make the evening feel personal.
-              </p>
-
-              <Link
-                to="/contact"
-                className="group mt-9 inline-flex items-center gap-3 bg-[#211d19] px-7 py-4 text-xs font-medium uppercase tracking-[0.16em] text-white hover:bg-[#342d27]"
-              >
-                Make an Enquiry
-
-                <ArrowRight
-                  size={16}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link>
-            </div>
-
-            <div className="overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=85"
-                alt="Elegant dining table"
-                className="h-[500px] w-full object-cover md:h-[620px]"
-              />
-            </div>
+        <section className="private-story private-container" aria-label="Your private dining experience">
+          <div>
+            <p>Whether for a milestone birthday, a corporate dinner, or a quiet celebration with family, our private dining room at Charing Cross seats up to twenty-four. The room is fully bookable, the kitchen is yours, and the menu is yours to shape.</p>
+            <p>Our private dining team will guide you through canapé options, wine pairings, and any dietary requirements – and a head chef will join you at the table at the start of service to walk you through the menu.</p>
           </div>
         </section>
 
-        {/* EXPERIENCES */}
-        <section className="bg-[#211d19] py-20 text-white md:py-28">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-            <div className="mb-14 max-w-3xl md:mb-20">
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-[#c8a46b]">
-                Designed for you
-              </p>
-
-              <h2 className="text-4xl font-normal leading-tight md:text-5xl lg:text-6xl">
-                Flexible dining,
-                <span className="block italic text-[#d9c7ab]">
-                  thoughtful hospitality.
-                </span>
-              </h2>
-            </div>
-
-            <div className="grid border-y border-white/10 md:grid-cols-3">
-              {experiences.map((experience, index) => {
-                const Icon = experience.icon
-
-                return (
-                  <article
-                    key={experience.title}
-                    className={`py-10 md:px-8 md:py-14 lg:px-10 ${
-                      index !== experiences.length - 1
-                        ? 'border-b border-white/10 md:border-b-0 md:border-r'
-                        : ''
-                    }`}
-                  >
-                    <Icon
-                      size={25}
-                      strokeWidth={1.3}
-                      className="mb-8 text-[#c8a46b]"
-                    />
-
-                    <h3 className="text-2xl font-normal">
-                      {experience.title}
-                    </h3>
-
-                    <p className="mt-4 text-sm leading-7 text-white/55">
-                      {experience.text}
-                    </p>
-                  </article>
-                )
-              })}
-            </div>
+        <section className="private-container" aria-label="Private dining features">
+          <div className="private-features">
+            {features.map(({ icon: Icon, title, text }) => (
+              <article key={title}>
+                <span className="private-feature-icon"><Icon size={28} strokeWidth={1.5} aria-hidden="true" /></span>
+                <h2>{title}</h2>
+                <p>{text}</p>
+              </article>
+            ))}
           </div>
         </section>
 
-        {/* ROOM */}
-        <section className="bg-[#f4efe7] py-20 md:py-28">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-            <div className="grid overflow-hidden bg-white lg:grid-cols-2">
-              <div className="min-h-[420px]">
-                <img
-                  src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1500&q=85"
-                  alt="Private dining room"
-                  className="h-full min-h-[420px] w-full object-cover"
-                />
-              </div>
-
-              <div className="flex items-center p-8 md:p-12 lg:p-16">
-                <div>
-                  <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[#9b6f3f]">
-                    The Private Room
-                  </p>
-
-                  <h2 className="text-4xl font-normal leading-tight text-[#211d19] md:text-5xl">
-                    Intimate dining for
-                    <span className="block italic text-[#8b6b4b]">
-                      up to 20 guests.
-                    </span>
-                  </h2>
-
-                  <p className="mt-6 max-w-lg leading-8 text-[#655d55]">
-                    A dedicated dining space with its own atmosphere, ideal for
-                    smaller celebrations and private dinners.
-                  </p>
-
-                  <div className="mt-8 grid gap-5 border-y border-[#ded5ca] py-7 sm:grid-cols-2">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-[#9b6f3f]">
-                        Seated
-                      </p>
-                      <p className="mt-2 text-xl text-[#211d19]">
-                        Up to 20 guests
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-[#9b6f3f]">
-                        Location
-                      </p>
-                      <p className="mt-2 text-xl text-[#211d19]">
-                        Mayfair
-                      </p>
-                    </div>
-                  </div>
-
-                  <Link
-                    to="/contact"
-                    className="group mt-8 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.16em] text-[#7f6043] hover:text-[#211d19]"
-                  >
-                    Enquire About This Room
-
-                    <ArrowRight
-                      size={16}
-                      className="transition-transform group-hover:translate-x-1"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
+        <section className="private-enquiry" aria-labelledby="private-enquiry-title">
+          <div className="private-container private-enquiry-heading">
+            <p className="private-label">Enquire</p>
+            <h2 id="private-enquiry-title">Plan Your Evening</h2>
+            <p>Tell us about your event and we'll come back to you within one working day with menus, room availability, and pricing.</p>
           </div>
-        </section>
-
-        {/* FINAL CTA */}
-        <section className="bg-[#171512] py-20 text-center text-white md:py-28">
-          <div className="mx-auto max-w-3xl px-5 sm:px-6">
-            <p className="mb-5 text-xs uppercase tracking-[0.35em] text-[#c8a46b]">
-              Plan your event
+          <div className="private-container">
+            <form className="private-form" aria-label="Private dining enquiry" onSubmit={handleSubmit}>
+              <label htmlFor="pd-name">Name</label>
+              <input id="pd-name" name="name" type="text" autoComplete="name" required />
+              <label htmlFor="pd-email">Email</label>
+              <input id="pd-email" name="email" type="email" autoComplete="email" required />
+              <label htmlFor="pd-phone">Phone</label>
+              <input id="pd-phone" name="phone" type="tel" autoComplete="tel" />
+              <label htmlFor="pd-site">Which restaurant?</label>
+              <select id="pd-site" name="site" defaultValue="either">
+                <option value="either">Either / no preference</option>
+                <option value="charing-cross">Charing Cross</option>
+                <option value="soho">Soho</option>
+              </select>
+              <label htmlFor="pd-date">Preferred date</label>
+              <input id="pd-date" name="date" type="text" placeholder="e.g. 14 December" />
+              <label htmlFor="pd-guests">Number of guests</label>
+              <input id="pd-guests" name="guests" type="number" min="2" max="200" />
+              <label htmlFor="pd-occasion">Occasion (optional)</label>
+              <input id="pd-occasion" name="occasion" type="text" placeholder="Birthday, corporate, family…" />
+              <label htmlFor="pd-message">Tell us about your event</label>
+              <textarea id="pd-message" name="message" rows={4} required minLength={10} />
+              <button type="submit">Send Enquiry</button>
+              {submitMessage && <p className="private-form-status" role="status">{submitMessage}</p>}
+            </form>
+            <p className="private-booking-note">Prefer to book a regular table?{' '}
+              <a href="https://www.sevenrooms.com/explore/maharajaofindia/reservations/create/search/" target="_blank" rel="noopener noreferrer">Book via SevenRooms →</a>
             </p>
-
-            <h2 className="text-4xl font-normal leading-tight md:text-5xl lg:text-6xl">
-              Tell us what
-              <span className="block italic text-[#d9c7ab]">
-                you have in mind.
-              </span>
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-xl leading-8 text-white/55">
-              Share your preferred date, group size and occasion and our team
-              will help you plan the details.
-            </p>
-
-            <Link
-              to="/contact"
-              className="group mt-9 inline-flex items-center gap-3 bg-[#f4efe7] px-7 py-4 text-xs font-medium uppercase tracking-[0.16em] text-[#211d19] hover:bg-white"
-            >
-              Private Dining Enquiry
-
-              <ArrowRight
-                size={16}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </Link>
           </div>
         </section>
       </main>
-
       <Footer />
     </>
   )
 }
-
-export default PrivateDining

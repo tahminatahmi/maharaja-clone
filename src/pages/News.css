@@ -1,0 +1,38 @@
+.news-page { background: #f7f3ea; color: #1a1a1a; line-height: 1.6; }
+.news-page h1, .news-page h2 { font-family: 'Qasira', Georgia, serif; font-weight: 400; color: #192e1f; }
+.news-container { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 1.5rem; }
+.news-label { color: #c9a961; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .3em; }
+.news-hero { position: relative; isolation: isolate; overflow: hidden; padding-block: 7rem; background: #192e1f; color: #f7f3ea; text-align: center; }
+.news-hero > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.news-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(#192e1fc7, #192e1feb), radial-gradient(circle at 70% 30%, #c9a9612e, transparent 60%); }
+.news-hero .news-label { margin-bottom: 1rem; }
+.news-hero h1 { max-width: 42rem; margin: 0 auto 1rem; color: #f7f3ea; font-size: clamp(2.5rem, 5.5vw, 4rem); line-height: 1.15; letter-spacing: -.02em; text-shadow: 0 1px 14px #00000059; }
+.news-divider { display: inline-block; width: 60px; height: 1px; margin-block: 1.5rem; background: #c9a961; }
+.news-hero-description { max-width: 36rem; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; opacity: .92; }
+.news-articles { padding-block: 4rem 3rem; }
+.news-article-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
+.news-article-card { display: flex; flex-direction: column; overflow: hidden; background: white; border: 1px solid #192e1f0f; border-radius: 4px; transition: transform .3s, box-shadow .3s, border-color .3s; }
+.news-article-card:hover { box-shadow: 0 32px 64px -28px #55382273, 0 12px 28px -16px #55382238; border-color: #c9a96173; transform: translateY(-6px); }
+.news-article-media { display: block; aspect-ratio: 3 / 2; overflow: hidden; background: #f7f3ea; }
+.news-article-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.news-article-card:hover img { transform: scale(1.04); }
+.news-article-body { display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem; }
+.news-article-body time { font-size: .7rem; font-weight: 600; color: #8a6a24; text-transform: uppercase; letter-spacing: 2px; }
+.news-article-body h2 { margin: 0; font-size: 1.375rem; line-height: 1.25; }
+.news-article-body h2 a:hover { color: #8a6a24; }
+.news-article-body > p { flex: 1; opacity: .85; font-size: .95rem; line-height: 1.65; }
+.news-article-link { align-self: flex-start; padding-bottom: 2px; border-bottom: 1px solid; color: #8a6a24; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+.news-newsletter { padding-block: 4rem; border-top: 1px solid #c9a96140; }
+.news-newsletter-container { max-width: 36rem; text-align: center; }
+.news-newsletter h2 { margin: .75rem 0 1rem; font-size: clamp(1.5rem, 3vw, 2rem); }
+.news-newsletter-description { margin-bottom: 1.5rem; line-height: 1.7; }
+.news-signup { padding: 2.5rem; border: 1px solid #c9a96166; border-radius: 8px; background: white; }
+.news-signup label { display: block; margin-bottom: .5rem; color: #192e1f; font-size: .8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+.news-signup input { display: block; width: 100%; min-width: 0; margin-bottom: 1.25rem; padding: .75rem 1rem; border: 1px solid #2d4a35; border-radius: 4px; background: #f7f3ea; font-size: 16px; }
+.news-signup button { min-height: 48px; padding: .9rem 1.8rem; border: 1px solid #c9a961; border-radius: 2px; background: #c9a961; color: #192e1f; font-size: .85rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; cursor: pointer; }
+.news-signup button:hover { background: #d6b973; }
+.news-signup-status { margin-top: 1rem; font-size: .9rem; }
+.news-page :focus-visible { outline: 2px solid #c9a961; outline-offset: 4px; }
+@media (max-width: 900px) { .news-article-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .news-hero { padding-block: 5rem; } .news-signup { padding: 1.5rem; } }
+@media (prefers-reduced-motion: reduce) { .news-article-card, .news-article-media img { transition: none; } .news-article-card:hover, .news-article-card:hover img { transform: none; } }

@@ -1,70 +1,44 @@
-const awards = [
-  {
-    year: '2026',
-    title: 'Dining Award',
-    subtitle: 'Contemporary Indian Dining',
-  },
-  {
-    year: '2026',
-    title: "Editor’s Pick",
-    subtitle: 'Modern Indian Restaurant',
-  },
-  {
-    year: '2025',
-    title: 'Guest Choice',
-    subtitle: 'Hospitality Recognition',
-  },
-]
-
-function Awards() {
+export default function Awards() {
   return (
-    <section className="bg-[#1b1815] py-20 text-white md:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-3xl text-center md:mb-20">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-[#c8a46b]">
-            Recognition
-          </p>
+    <section className="bg-[#f5f0e8] px-6 pt-20 pb-16 text-center lg:pt-[88px] lg:pb-[72px]">
+      <div className="mx-auto max-w-[760px]">
+        {/* Label */}
+        <p className="text-[12px] font-semibold uppercase tracking-[0.38em] text-[#c9a451]">
+          Recognised By
+        </p>
 
-          <h2 className="text-4xl font-normal leading-tight md:text-5xl lg:text-6xl">
-            Recognised for an
-            <span className="block italic text-[#d9c7ab]">
-              exceptional dining experience.
-            </span>
-          </h2>
+        {/* Description */}
+        <p className="mx-auto mt-7 max-w-[620px] text-[18px] leading-[1.75] text-[#35322f] sm:text-[19px]">
+          Featured by London's leading restaurant guides and trusted by
+          <br className="hidden sm:block" />
+          diners across six decades of service.
+        </p>
 
-          <p className="mx-auto mt-6 max-w-2xl leading-7 text-white/50">
-            Placeholder recognition created for this learning project. These
-            awards are fictional and are not linked to real organisations.
-          </p>
-        </div>
+        {/* Recognition cards */}
+        <div className="mx-auto mt-10 flex max-w-[490px] flex-col justify-center gap-6 sm:flex-row">
+          {/* SquareMeal */}
+          <div className="flex h-[120px] flex-1 flex-col items-center justify-center rounded-[8px] border border-[#d5b15f]/45 bg-white">
+            <p className="font-qasira text-[25px] leading-none text-[#173728]">
+              SquareMeal
+            </p>
 
-        <div className="grid border-y border-white/10 md:grid-cols-3">
-          {awards.map((award, index) => (
-            <article
-              key={award.title}
-              className={`px-6 py-10 text-center md:px-10 md:py-14 ${
-                index !== awards.length - 1
-                  ? 'border-b border-white/10 md:border-b-0 md:border-r'
-                  : ''
-              }`}
-            >
-              <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#c8a46b]">
-                {award.year}
-              </p>
+            <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#a47d2d]">
+              Restaurant Guide
+            </p>
+          </div>
 
-              <h3 className="text-2xl font-normal md:text-3xl">
-                {award.title}
-              </h3>
+          {/* TripAdvisor */}
+          <div className="flex h-[120px] flex-1 flex-col items-center justify-center rounded-[8px] border border-[#d5b15f]/45 bg-white">
+            <p className="font-qasira text-[25px] leading-none text-[#173728]">
+              TripAdvisor
+            </p>
 
-              <p className="mt-4 text-sm leading-6 text-white/45">
-                {award.subtitle}
-              </p>
-            </article>
-          ))}
+            <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#a47d2d]">
+              Diner Reviews
+            </p>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default Awards

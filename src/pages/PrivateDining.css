@@ -1,0 +1,34 @@
+.private-page { background: #f7f3ea; color: #1a1a1a; line-height: 1.6; }
+.private-page h1, .private-page h2 { font-family: 'Qasira', Georgia, serif; font-weight: 400; color: #192e1f; }
+.private-container { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 1.5rem; }
+.private-label { color: #c9a961; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .3em; }
+.private-hero { position: relative; isolation: isolate; overflow: hidden; padding-block: 7rem; background: #192e1f; color: #f7f3ea; text-align: center; }
+.private-hero > img { position: absolute; inset: 0; z-index: -2; height: 100%; width: 100%; object-fit: cover; }
+.private-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(#192e1fc7, #192e1feb), radial-gradient(circle at 70% 30%, #c9a9612e, transparent 60%); }
+.private-hero .private-label { margin-bottom: 1rem; }
+.private-hero h1 { max-width: 42rem; margin: 0 auto 1rem; color: #f7f3ea; font-size: clamp(2.5rem, 5.5vw, 4rem); line-height: 1.15; letter-spacing: -.02em; text-shadow: 0 1px 14px #00000059; }
+.private-divider { display: inline-block; width: 60px; height: 1px; margin-block: 1.5rem; background: #c9a961; }
+.private-hero-description { max-width: 36rem; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; opacity: .92; }
+.private-story { padding-block: 6rem; }
+.private-story > div { max-width: 38rem; margin: auto; color: #2a2a2a; font-size: 1.125rem; line-height: 1.85; }
+.private-story p + p { margin-top: 1.5rem; }
+.private-story p:first-child::first-letter { float: left; font-family: 'Qasira', Georgia, serif; color: #c9a961; margin: .35rem .7rem 0 0; font-size: 4.5rem; line-height: .85; }
+.private-features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; padding-block: 5rem; text-align: center; }
+.private-feature-icon { display: inline-flex; justify-content: center; align-items: center; width: 4rem; height: 4rem; border: 1px solid #c9a961; border-radius: 50%; color: #c9a961; margin-bottom: 1.25rem; }
+.private-features h2 { margin-bottom: .5rem; font-size: 1.375rem; }
+.private-enquiry { background: #192e1f; color: #f7f3ea; padding-block: 5rem; }
+.private-enquiry-heading { text-align: center; margin-bottom: 2.5rem; }
+.private-enquiry-heading h2 { color: #f7f3ea; font-size: clamp(1.75rem, 3.5vw, 2.5rem); margin: .75rem 0 1rem; line-height: 1.15; }
+.private-enquiry-heading > p:last-child { max-width: 36rem; margin: 0 auto 2rem; opacity: .92; }
+.private-form { max-width: 36rem; margin: auto; padding: 2.5rem; border: 1px solid #c9a96166; border-radius: 8px; background: #fff; color: #1a1a1a; }
+.private-form label { display: block; margin-bottom: .5rem; color: #192e1f; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+.private-form input, .private-form textarea, .private-form select { display: block; width: 100%; min-width: 0; margin-bottom: 1.25rem; padding: .75rem 1rem; border: 1px solid #2d4a35; border-radius: 4px; background: #f7f3ea; font-size: 16px; }
+.private-form textarea { resize: vertical; }
+.private-form button { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: .9rem 1.8rem; border: 1px solid #c9a961; border-radius: 2px; background: #c9a961; color: #192e1f; font-size: .85rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; cursor: pointer; }
+.private-form button:hover { background: #d6b973; }
+.private-form-status { margin-top: 1rem; color: #192e1f; font-size: .9rem; }
+.private-booking-note { margin-top: 1.5rem; text-align: center; opacity: .8; font-size: .9rem; }
+.private-booking-note a { color: #c9a961; border-bottom: 1px solid currentColor; }
+.private-page :focus-visible { outline: 2px solid #c9a961; outline-offset: 3px; }
+@media (max-width: 900px) { .private-features { grid-template-columns: 1fr; } .private-features p { max-width: 30rem; margin-inline: auto; } }
+@media (max-width: 480px) { .private-hero { padding-block: 5rem; } .private-story { padding-block: 4rem; } .private-form { padding: 1.5rem; } .private-form button { width: 100%; } }

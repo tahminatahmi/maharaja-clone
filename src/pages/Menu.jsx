@@ -1,266 +1,89 @@
-import { Leaf } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import BookingCTA from '../components/BookingCTA'
+import menuSections from '../data/menu.json'
+import heroImage from '../assets/maharaja/photography/agatanowetastudio-07822.webp'
+import './Menu.css'
 
-const menuSections = [
-  {
-    title: 'Small Plates',
-    description: 'Designed to begin the table and share.',
-    dishes: [
-      {
-        name: 'Charred Cauliflower',
-        description: 'Coconut, toasted cumin, coriander and lime.',
-        price: '£9',
-        vegetarian: true,
-      },
-      {
-        name: 'Tandoori Chicken',
-        description: 'Hung yoghurt, Kashmiri chilli, fenugreek and lemon.',
-        price: '£12',
-      },
-      {
-        name: 'Spiced Lamb Croquettes',
-        description: 'Slow-cooked lamb, green chilli and mint chutney.',
-        price: '£11',
-      },
-      {
-        name: 'Crispy Potato Chaat',
-        description: 'Tamarind, yoghurt, pomegranate and sev.',
-        price: '£9',
-        vegetarian: true,
-      },
-    ],
-  },
-  {
-    title: 'From the Charcoal',
-    description: 'Cooked over high heat for smoke, colour and depth.',
-    dishes: [
-      {
-        name: 'Aurum Chicken Tikka',
-        description: 'Smoked paprika, yoghurt, ginger and coriander.',
-        price: '£18',
-      },
-      {
-        name: 'Tandoori Sea Bass',
-        description: 'Ajwain, lemon, green chilli and herb dressing.',
-        price: '£24',
-      },
-      {
-        name: 'Charred Paneer',
-        description: 'Peppers, tomato, fenugreek and smoked chilli.',
-        price: '£17',
-        vegetarian: true,
-      },
-      {
-        name: 'Lamb Seekh',
-        description: 'Cardamom, green chilli, mint and pickled onion.',
-        price: '£19',
-      },
-    ],
-  },
-  {
-    title: 'Curries & Mains',
-    description: 'Slow cooking, layered spices and deeply flavoured sauces.',
-    dishes: [
-      {
-        name: 'Saffron Lamb Curry',
-        description: 'Slow-cooked lamb, tomato, saffron and warming spices.',
-        price: '£22',
-      },
-      {
-        name: 'Butter Chicken',
-        description: 'Charred chicken, tomato, fenugreek and cultured butter.',
-        price: '£20',
-      },
-      {
-        name: 'Black Lentil Dal',
-        description: 'Slow-cooked lentils, tomato, ginger and cream.',
-        price: '£15',
-        vegetarian: true,
-      },
-      {
-        name: 'Seasonal Vegetable Curry',
-        description: 'Market vegetables, coconut, mustard seed and curry leaf.',
-        price: '£17',
-        vegetarian: true,
-      },
-    ],
-  },
-  {
-    title: 'Rice & Sides',
-    description: 'Made for the centre of the table.',
-    dishes: [
-      {
-        name: 'Saffron Basmati Rice',
-        description: 'Steamed basmati, saffron and aromatic spices.',
-        price: '£6',
-        vegetarian: true,
-      },
-      {
-        name: 'Garlic Naan',
-        description: 'Tandoor-baked bread, garlic and coriander.',
-        price: '£5',
-        vegetarian: true,
-      },
-      {
-        name: 'Truffle Naan',
-        description: 'Tandoor bread, cultured butter and black truffle.',
-        price: '£7',
-        vegetarian: true,
-      },
-      {
-        name: 'Cucumber Raita',
-        description: 'Yoghurt, cucumber, roasted cumin and mint.',
-        price: '£5',
-        vegetarian: true,
-      },
-    ],
-  },
-  {
-    title: 'Desserts',
-    description: 'A final balance of sweetness, spice and freshness.',
-    dishes: [
-      {
-        name: 'Cardamom Kulfi',
-        description: 'Pistachio, cardamom and rose.',
-        price: '£9',
-        vegetarian: true,
-      },
-      {
-        name: 'Dark Chocolate & Chai',
-        description: 'Chocolate crémeux, masala chai and caramel.',
-        price: '£11',
-        vegetarian: true,
-      },
-      {
-        name: 'Mango & Coconut',
-        description: 'Fresh mango, coconut cream and lime.',
-        price: '£10',
-        vegetarian: true,
-      },
-    ],
-  },
-]
+const pdfMenu = 'https://maharajaindian.co.uk/wp-content/uploads/2025/03/Maharaja-Menu-2025.pdf'
 
-function Menu() {
+export default function Menu() {
   return (
     <>
       <Navbar />
-
-      <main>
-        {/* HERO */}
-        <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-[#171512] text-white">
-          <img
-            src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1800&q=85"
-            alt="Contemporary Indian dishes"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-
-          <div className="absolute inset-0 bg-black/60" />
-
-          <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-36 sm:px-6 md:pb-20 lg:px-8">
-            <p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-[#d8b37d]">
-              The menu
-            </p>
-
-            <h1 className="max-w-4xl text-5xl font-normal leading-[0.92] sm:text-6xl md:text-7xl lg:text-8xl">
-              Made for sharing,
-              <span className="block italic text-[#e4d4bd]">
-                remembered for flavour.
-              </span>
-            </h1>
-
-            <p className="mt-7 max-w-xl leading-8 text-white/65">
-              A modern interpretation of Indian cooking, from the charcoal
-              grill to slow-cooked curries and seasonal plates.
-            </p>
+      <main id="main" className="menu-page">
+        <section className="menu-hero" aria-labelledby="menu-title">
+          <img src={heroImage} alt="" fetchPriority="high" />
+          <div className="menu-container">
+            <p className="menu-label">Menu</p>
+            <h1 id="menu-title">From The Kitchen</h1>
+            <span className="menu-divider" aria-hidden="true" />
+            <p className="menu-hero-description">Starters, tandoori, the classic curries, biryanis, breads. Served at both our Charing Cross and Soho restaurants.</p>
           </div>
         </section>
 
-        {/* MENU */}
-        <section className="bg-[#f4efe7] py-20 md:py-28">
-          <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
-            {menuSections.map((section, sectionIndex) => (
-              <div
-                key={section.title}
-                className={
-                  sectionIndex !== menuSections.length - 1
-                    ? 'mb-20 border-b border-[#d6cabc] pb-20'
-                    : ''
-                }
-              >
-                <div className="mb-10 md:flex md:items-end md:justify-between md:gap-10">
-                  <div>
-                    <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#9b6f3f]">
-                      0{sectionIndex + 1}
-                    </p>
-
-                    <h2 className="text-4xl font-normal text-[#211d19] md:text-5xl">
-                      {section.title}
-                    </h2>
-                  </div>
-
-                  <p className="mt-4 max-w-md text-sm leading-7 text-[#776d63] md:mt-0 md:text-right">
-                    {section.description}
-                  </p>
-                </div>
-
-                <div className="grid gap-x-14 gap-y-9 md:grid-cols-2">
-                  {section.dishes.map((dish) => (
-                    <article
-                      key={dish.name}
-                      className="border-b border-[#ded5ca] pb-7"
-                    >
-                      <div className="flex items-start justify-between gap-5">
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h3 className="text-xl font-normal text-[#211d19]">
-                              {dish.name}
-                            </h3>
-
-                            {dish.vegetarian && (
-                              <Leaf
-                                size={14}
-                                className="shrink-0 text-[#71865b]"
-                              />
-                            )}
-                          </div>
-
-                          <p className="mt-2 max-w-sm text-sm leading-6 text-[#776d63]">
-                            {dish.description}
-                          </p>
-                        </div>
-
-                        <span className="shrink-0 text-sm font-medium text-[#8b6b4b]">
-                          {dish.price}
-                        </span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            ))}
-
-            <div className="mt-16 border border-[#d6cabc] p-6 md:p-8">
-              <p className="text-sm leading-7 text-[#776d63]">
-                <strong className="font-medium text-[#211d19]">
-                  Dietary information:
-                </strong>{' '}
-                The leaf symbol identifies vegetarian dishes. Please speak to
-                our team about allergies or dietary requirements before
-                ordering.
-              </p>
+        <section className="menu-intro menu-container" aria-label="Our kitchen">
+          <div>
+            <p className="menu-intro-story">Since they first set foot in 1498, starting with the Portuguese, Europeans have been fascinated by the riches of the Indian sub-continent, with emphasis increasing during the British Raj. It was not only tea and jute, but the vast variety of spices and herbs that tempted them to stay so far from home over the countries. Inspired by tradition and innovation, our kitchen becomes like a spice market every day, using the great range of herbs and spices which are ground and skilfully blended in the preparation of some of the great classic dishes that we offer to you in our tempting menu.</p>
+            <div className="menu-actions">
+              <a className="menu-button menu-button-gold" href="https://www.sevenrooms.com/explore/maharajaofindia/reservations/create/search/" target="_blank" rel="noopener noreferrer">Book A Table</a>
+              <a className="menu-button" href={pdfMenu}>Download PDF Menu</a>
             </div>
           </div>
         </section>
 
-        <BookingCTA />
-      </main>
+        <nav className="menu-container menu-jump" aria-label="Menu sections">
+          <ul>{menuSections.map(section => <li key={section.id}><a href={`#${section.id}`}>{section.title}</a></li>)}</ul>
+        </nav>
 
+        <div className="menu-container menu-dishes">
+          {menuSections.map(section => (
+            <section id={section.id} className="menu-section" key={section.id} aria-labelledby={`${section.id}-title`}>
+              <header className="menu-section-head">
+                <span className="menu-section-mark" aria-hidden="true">◆</span>
+                <h2 id={`${section.id}-title`}>{section.title}</h2>
+                {section.intro && <p>{section.intro}</p>}
+              </header>
+              <ul className="menu-list">
+                {section.items.map(dish => (
+                  <li className="menu-item" key={dish.number}>
+                    <h3><span className="menu-item-number">{dish.number}.</span> {dish.name}</h3>
+                    {dish.description && <p className="menu-item-description">{dish.description}</p>}
+                    {dish.choices && <p className="menu-item-choices"><span>Choice of:</span> {dish.choices.replace('Choice of: ', '')}</p>}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+
+        <section className="menu-drinks">
+          <div className="menu-container menu-small-container">
+            <p className="menu-label">Drinks</p>
+            <h2>Wine, Beer, Cocktails &amp; More</h2>
+            <p>Full drinks menu – champagne, wine, beer, cocktails, mocktails, soft drinks, spirits – is detailed in the printed menu and available on request.</p>
+            <a className="menu-button" href={pdfMenu}>View Full Drinks Menu (PDF)</a>
+          </div>
+        </section>
+        <section className="menu-allergy">
+          <div className="menu-container menu-small-container">
+            <h2 className="menu-label">Allergy &amp; Service</h2>
+            <p>If there is a dish you like and not listed on the menu, please enquire from the staff. We will be pleased to prepare it for you. We do not use any artificial colour. All prices include VAT and the applicable rate and exclude service charge which will be discretionary 15% upon billing and are in pound sterling. Management reserves the right to refuse service without any explanation.</p>
+          </div>
+        </section>
+        <section className="menu-reserve">
+          <div className="menu-container">
+            <p className="menu-label">Reserve</p>
+            <h2>Try the Menu in Person</h2>
+            <p className="menu-reserve-description">The menu is served identically at both restaurants. Pick the location that suits you and we'll see you soon.</p>
+            <div className="menu-actions">
+              <Link className="menu-button menu-button-gold" to="/locations">Charing Cross</Link>
+              <Link className="menu-button menu-button-light" to="/locations">Soho</Link>
+            </div>
+          </div>
+        </section>
+      </main>
       <Footer />
     </>
   )
 }
-
-export default Menu

@@ -1,111 +1,92 @@
-import { ArrowUpRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+const newsItems = [
+  {
+    date: "24 June 2026",
+    title: "How to Order at an Indian Restaurant: A First-Timer’s Guide",
+    excerpt:
+      "New to Indian food? A simple, no-pressure guide to building a balanced order - what to get, how much, and how to pace it.",
+    image: "src/assets/maharaja/photography/agatanowetastudio-08000.webp",
+    href: "/how-to-order-indian-food/",
+  },
+  {
+    date: "23 June 2026",
+    title: "A Guide to Pre-Theatre Dining Near Leicester Square",
+    excerpt:
+      "How to eat well before a West End show: the right timing, what to order, and why a three-course set menu beats a rushed bite.",
+    image: "src/assets/maharaja/photography/agatanowetastudio-07939.webp",
+    href: "/pre-theatre-dining-leicester-square/",
+  },
+  {
+    date: "22 June 2026",
+    title: "Regional Indian Cuisine: A Tour from Punjab to the Coast",
+    excerpt:
+      "There is no single Indian cuisine. A short tour of the regions behind the menu, from the tandoors of Punjab to the coconut curries of the south.",
+    image: "src/assets/maharaja/photography/agatanowetastudio-07928.webp",
+    href: "/regional-indian-cuisine-guide/",
+  },
+];
 
-const articles = [
-  {
-    category: 'Kitchen Notes',
-    title: 'Why charcoal cooking changes flavour',
-    excerpt:
-      'A closer look at smoke, heat and why live-fire cooking gives certain dishes their distinctive character.',
-    date: '14 August 2026',
-    image:
-      'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    category: 'Ingredients',
-    title: 'The role of spice beyond heat',
-    excerpt:
-      'Spices can add aroma, sweetness, bitterness and depth. Heat is only one part of the story.',
-    date: '03 August 2026',
-    image:
-      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    category: 'Aurum Journal',
-    title: 'Designing a modern Indian dining room',
-    excerpt:
-      'How lighting, materials, spacing and sound can shape a restaurant experience before the first dish arrives.',
-    date: '22 July 2026',
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80',
-  },
-]
-
-function LatestNews() {
+export default function LatestNews() {
   return (
-    <section className="bg-[#fffaf3] py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-[#9b6f3f]">
-              Latest stories
-            </p>
+    <section className="bg-[#f5f0e8] px-6 py-24 lg:py-[110px]">
+      <div className="mx-auto max-w-[1360px]">
+        <div className="text-center">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.38em] text-[#c9a451]">
+            From The Kitchen
+          </p>
 
-            <h2 className="text-4xl font-normal leading-tight text-[#211d19] md:text-5xl lg:text-6xl">
-              From the kitchen,
-              <span className="block italic text-[#8b6b4b]">
-                dining room and beyond.
-              </span>
-            </h2>
-          </div>
-
-          <Link
-            to="/news"
-            className="group inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#7f6043] transition hover:text-[#211d19]"
-          >
-            View all stories
-            <ArrowUpRight
-              size={17}
-              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-            />
-          </Link>
+          <h2 className="mt-5 font-qasira text-[44px] font-normal leading-none tracking-[-0.02em] text-[#173728] sm:text-[50px] lg:text-[54px]">
+            Latest News
+          </h2>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          {articles.map((article) => (
-            <article key={article.title} className="group">
-              <div className="mb-6 overflow-hidden">
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          {newsItems.map((item) => (
+            <article
+              key={item.title}
+              className="overflow-hidden rounded-[3px] bg-white"
+            >
+              <a href={item.href} className="block overflow-hidden">
                 <img
-                  src={article.image}
-                  alt={article.title}
-                  className="h-[300px] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-[360px]"
+                  src={item.image}
+                  alt={item.title}
+                  className="h-[285px] w-full object-cover lg:h-[320px]"
                 />
+              </a>
+
+              <div className="px-7 py-8 lg:px-8 lg:py-8">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.26em] text-[#9b7628]">
+                  {item.date}
+                </p>
+
+                <h3 className="mt-4 font-qasira text-[25px] font-normal leading-[1.18] text-[#173728] lg:text-[27px]">
+                  <a href={item.href}>{item.title}</a>
+                </h3>
+
+                <p className="mt-5 text-[17px] leading-[1.7] text-[#46423e]">
+                  {item.excerpt}
+                </p>
+
+                <a
+                  href={item.href}
+                  className="mt-5 inline-flex items-center gap-2 border-b border-[#b28a37] pb-2 text-[13px] font-semibold uppercase tracking-[0.2em] text-[#9b7628]"
+                >
+                  Read More
+                  <span aria-hidden="true">→</span>
+                </a>
               </div>
-
-              <div className="mb-4 flex items-center justify-between gap-4 text-xs uppercase tracking-[0.16em]">
-                <span className="text-[#9b6f3f]">
-                  {article.category}
-                </span>
-
-                <time className="text-[#9b9187]">
-                  {article.date}
-                </time>
-              </div>
-
-              <h3 className="mb-4 text-2xl font-normal leading-snug text-[#211d19]">
-                {article.title}
-              </h3>
-
-              <p className="mb-6 leading-7 text-[#6d645c]">
-                {article.excerpt}
-              </p>
-
-              <Link
-                to="/news"
-                className="group/link inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#7f6043] transition hover:text-[#211d19]"
-              >
-                Read article
-                <ArrowUpRight
-                  size={16}
-                  className="transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
-                />
-              </Link>
             </article>
           ))}
         </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="/news"
+            className="inline-flex min-h-[56px] items-center justify-center border border-[#173728] px-8 text-[13px] font-semibold uppercase tracking-[0.22em] text-[#173728]"
+          >
+            All Stories
+          </a>
+        </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default LatestNews

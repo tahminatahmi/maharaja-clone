@@ -1,16 +1,15 @@
-import { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import heroImage from '../assets/maharaja/photography/agatanowetastudio-07795.webp'
 import './Contact.css'
 
 export default function Contact() {
-  const [status, setStatus] = useState('')
+//   const [status, setStatus] = useState('')
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    setStatus('Online messages are not connected yet. Please email hello@maharajaindian.co.uk or call us. Your message has not been sent.')
-  }
+//   function handleSubmit(event) {
+//     event.preventDefault()
+//     setStatus('Online messages are not connected yet. Please email hello@maharajaindian.co.uk or call us. Your message has not been sent.')
+//   }
 
   return (
     <>
@@ -41,7 +40,7 @@ export default function Contact() {
             <p className="contact-email"><strong>Email:</strong> <a href="mailto:hello@maharajaindian.co.uk">hello@maharajaindian.co.uk</a></p>
           </aside>
 
-          <form className="contact-form" aria-label="Contact form" onSubmit={handleSubmit}>
+          {/* <form className="contact-form" aria-label="Contact form" onSubmit={handleSubmit}>
             <label htmlFor="contact-name">Name</label>
             <input id="contact-name" name="name" type="text" autoComplete="name" required />
             <label htmlFor="contact-email">Email</label>
@@ -56,7 +55,7 @@ export default function Contact() {
             <textarea id="contact-message" name="message" rows={5} minLength={10} required />
             <button type="submit">Send Message</button>
             {status && <p role="status" className="contact-status">{status}</p>}
-          </form>
+          </form> */}
         </section>
       </main>
       <Footer />

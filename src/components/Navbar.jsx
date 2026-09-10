@@ -53,14 +53,14 @@ export default function Navbar() {
         {/* Desktop Buttons */}
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            to="/contact"
+            to="https://www.sevenrooms.com/explore/maharajaofindia/reservations/create/search/"
             className="inline-flex h-[52px] min-w-[186px] items-center justify-center bg-[#d4af5c] px-7 text-[12px] font-semibold uppercase tracking-[0.25em] text-[#173728]"
           >
             Book A Table
           </Link>
 
           <a
-            href="#"
+            href="https://www.maharajacharingcross.co.uk/order.aspx"
             className="inline-flex h-[52px] min-w-[216px] items-center justify-center border border-white/45 px-7 text-[12px] font-semibold uppercase tracking-[0.25em] text-white"
           >
             Click & Collect

@@ -9,7 +9,7 @@
 .contact-hero h1 { max-width: 42rem; margin: 0 auto 1rem; color: #f7f3ea; font-size: clamp(2.5rem, 5.5vw, 4rem); line-height: 1.15; letter-spacing: -.02em; text-shadow: 0 1px 14px #00000059; }
 .contact-divider { display: inline-block; width: 60px; height: 1px; margin-block: 1.5rem; background: #c9a961; }
 .contact-hero-description { max-width: 36rem; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; opacity: .92; }
-.contact-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 3rem; align-items: start; padding-block: 4rem; }
+.contact-content { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; align-items: start; padding-block: 4rem; text-align: center; }
 .contact-content aside h2 { margin: .75rem 0 1.5rem; font-size: 1.5rem; }
 .contact-address { margin-bottom: 1.5rem; }
 .contact-address h3 { color: #c9a961; font-size: 1rem; }

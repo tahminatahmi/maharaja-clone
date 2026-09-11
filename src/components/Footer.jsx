@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Phone } from 'lucide-react'
 
 const navigation = [
   ['Home', '/'],
@@ -39,7 +40,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#192f20] text-[#deded2]">
+    <footer className="bg-[#192f20] pb-[calc(69px+env(safe-area-inset-bottom))] text-[#deded2] lg:pb-0">
       <div className="mx-auto w-[88%] max-w-[1280px] pt-16 pb-7 lg:pt-[72px]">
         <div className="grid gap-12 pb-14 md:grid-cols-2 lg:grid-cols-[1.15fr_0.85fr_1.1fr] lg:gap-8">
           <section aria-labelledby="footer-visit">
@@ -111,6 +112,24 @@ export default function Footer() {
           <p>Two restaurants, one kitchen. Crafted in London.</p>
         </div>
       </div>
+      <nav
+        aria-label="Quick contact and reservations"
+        className="fixed inset-x-0 bottom-0 z-50 flex gap-2.5 border-t border-[#c5a65c] bg-[#192f20] px-3 pt-2 pb-[calc(10px+env(safe-area-inset-bottom))] lg:hidden"
+      >
+        <a
+          href="tel:+442030913500"
+          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-md border border-[#c5a65c] px-[18px] text-sm font-semibold text-[#deded2] hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c5a65c]"
+        >
+          <Phone size={16} aria-hidden="true" />
+          Call
+        </a>
+        <a
+          href="https://www.sevenrooms.com/explore/maharajaofindia/reservations/create/search/"
+          className="inline-flex h-12 min-w-0 flex-1 items-center justify-center rounded-md bg-[#c5a65c] px-4 text-sm font-semibold text-[#192f20] hover:bg-[#d4b771] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c5a65c]"
+        >
+          Book a Table
+        </a>
+      </nav>
     </footer>
   )
 }

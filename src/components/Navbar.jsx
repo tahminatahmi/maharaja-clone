@@ -18,7 +18,7 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <header className="relative z-50 w-full bg-[#183b2b] text-white">
+    <header className="sticky top-0 z-50 w-full bg-[#183b2b] text-white">
       <nav
         className="mx-auto flex h-[86px] max-w-[1240px] items-center justify-between px-5 sm:px-6 lg:px-8"
         aria-label="Primary navigation"

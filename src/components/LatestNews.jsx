@@ -1,10 +1,14 @@
+import orderingImage from "../assets/maharaja/photography/agatanowetastudio-08000.webp";
+import preTheatreImage from "../assets/maharaja/photography/agatanowetastudio-07939.webp";
+import regionalCuisineImage from "../assets/maharaja/photography/agatanowetastudio-07928.webp";
+
 const newsItems = [
   {
     date: "24 June 2026",
     title: "How to Order at an Indian Restaurant: A First-Timer’s Guide",
     excerpt:
       "New to Indian food? A simple, no-pressure guide to building a balanced order - what to get, how much, and how to pace it.",
-    image: "src/assets/maharaja/photography/agatanowetastudio-08000.webp",
+    image: orderingImage,
     href: "/how-to-order-indian-food/",
   },
   {
@@ -12,7 +16,7 @@ const newsItems = [
     title: "A Guide to Pre-Theatre Dining Near Leicester Square",
     excerpt:
       "How to eat well before a West End show: the right timing, what to order, and why a three-course set menu beats a rushed bite.",
-    image: "src/assets/maharaja/photography/agatanowetastudio-07939.webp",
+    image: preTheatreImage,
     href: "/pre-theatre-dining-leicester-square/",
   },
   {
@@ -20,7 +24,7 @@ const newsItems = [
     title: "Regional Indian Cuisine: A Tour from Punjab to the Coast",
     excerpt:
       "There is no single Indian cuisine. A short tour of the regions behind the menu, from the tandoors of Punjab to the coconut curries of the south.",
-    image: "src/assets/maharaja/photography/agatanowetastudio-07928.webp",
+    image: regionalCuisineImage,
     href: "/regional-indian-cuisine-guide/",
   },
 ];

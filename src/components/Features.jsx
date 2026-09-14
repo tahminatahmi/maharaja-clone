@@ -20,8 +20,8 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="bg-white px-6 py-20 text-center lg:pt-20 lg:pb-24">
-      <div className="mx-auto max-w-[1320px]">
+    <section className="bg-white py-20 text-center lg:pt-20 lg:pb-24">
+      <div className="site-container">
         <p className="text-[12px] font-semibold uppercase tracking-[0.38em] text-[#c9a451]">
           Our Promise
         </p>

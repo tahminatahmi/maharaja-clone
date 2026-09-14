@@ -20,8 +20,8 @@ export default function Hero() {
 
 <HeroOrnament />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-10 xl:px-12">
-          <div className="max-w-[980px] lg:-translate-x-4">
+        <div className="relative z-10 site-container flex h-full items-center">
+          <div className="max-w-[980px]">
             <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.38em] text-[#d8b35e]">
               The Home Of Indian Food · London
             </p>

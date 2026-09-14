@@ -72,3 +72,10 @@ img {
   background: #c8a46b;
   color: #171512;
 }
+
+/* Shared content edges for the header, hero, card sections, and footer. */
+.site-container {
+  width: calc(100% - 3rem);
+  max-width: 1260px;
+  margin-inline: auto;
+}

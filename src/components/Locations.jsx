@@ -17,8 +17,8 @@ const locations = [
 
 export default function Locations() {
   return (
-    <section className="bg-[#173728] px-6 py-24 text-white lg:py-28">
-      <div className="mx-auto max-w-[1360px]">
+    <section className="bg-[#173728] py-24 text-white lg:py-28">
+      <div className="site-container">
         <div className="text-center">
           <p className="text-[12px] font-semibold uppercase tracking-[0.38em] text-[#d5b15f]">
             Find Us

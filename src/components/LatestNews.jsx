@@ -27,8 +27,8 @@ const newsItems = [
 
 export default function LatestNews() {
   return (
-    <section className="bg-[#f5f0e8] px-6 py-24 lg:py-[110px]">
-      <div className="mx-auto max-w-[1360px]">
+    <section className="bg-[#f5f0e8] py-24 lg:py-[110px]">
+      <div className="site-container">
         <div className="text-center">
           <p className="text-[12px] font-semibold uppercase tracking-[0.38em] text-[#c9a451]">
             From The Kitchen

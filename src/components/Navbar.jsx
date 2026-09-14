@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#183b2b] text-white">
       <nav
-        className="mx-auto flex h-[86px] max-w-[1240px] items-center justify-between px-5 sm:px-6 lg:px-8"
+        className="site-container flex h-[86px] items-center justify-between"
         aria-label="Primary navigation"
       >
         {/* Left */}

@@ -28,7 +28,7 @@ const dishes = [
 
 export default function SignatureDishes() {
   return (
-    <section className="relative overflow-hidden bg-[#08271b] px-6 py-24 text-white lg:py-28">
+    <section className="relative overflow-hidden bg-[#08271b] py-24 text-white lg:py-28">
       {/* Faded background image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-50"
@@ -40,7 +40,7 @@ export default function SignatureDishes() {
       {/* Strong dark green overlay */}
       <div className="absolute inset-0 bg-[#08271b]/92" />
 
-      <div className="relative z-10 mx-auto max-w-[1260px] text-center">
+      <div className="relative z-10 site-container text-center">
         <p className="text-[12px] font-semibold uppercase tracking-[0.38em] text-[#d5b15f]">
           Signature Dishes
         </p>

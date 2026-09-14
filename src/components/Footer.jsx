@@ -41,7 +41,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#192f20] pb-[calc(69px+env(safe-area-inset-bottom))] text-[#deded2] lg:pb-0">
-      <div className="mx-auto w-[88%] max-w-[1280px] pt-16 pb-7 lg:pt-[72px]">
+      <div className="site-container pt-16 pb-7 lg:pt-[72px]">
         <div className="grid gap-12 pb-14 md:grid-cols-2 lg:grid-cols-[1.15fr_0.85fr_1.1fr] lg:gap-8">
           <section aria-labelledby="footer-visit">
             <h2 id="footer-visit" className={headingClass}>Visit Us</h2>
